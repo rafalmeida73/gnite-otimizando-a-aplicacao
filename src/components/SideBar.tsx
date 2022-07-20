@@ -1,4 +1,4 @@
-import { Button } from "./Button";
+import { Button } from './Button';
 
 interface SideBarProps {
   genres: Array<{
@@ -7,20 +7,24 @@ interface SideBarProps {
     title: string;
   }>;
   selectedGenreId: number;
-  buttonClickCallback: (args: any) => void;
+  // eslint-disable-next-line no-unused-vars
+  buttonClickCallback: (args: number) => void
 }
 
 export function SideBar({
   genres,
   selectedGenreId,
-  buttonClickCallback
+  buttonClickCallback,
 }: SideBarProps) {
   return (
     <nav className="sidebar">
-      <span>Watch<p>Me</p></span>
+      <span>
+        Watch
+        <p>Me</p>
+      </span>
 
       <div className="buttons-container">
-        {genres.map(genre => (
+        {genres.map((genre) => (
           <Button
             key={String(genre.id)}
             title={genre.title}
@@ -32,5 +36,5 @@ export function SideBar({
       </div>
 
     </nav>
-  )
+  );
 }
